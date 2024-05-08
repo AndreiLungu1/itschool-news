@@ -1,0 +1,12 @@
+/* Ma asigur ca toate paginile ocupa minim toata inaltimea ecranului */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cu proprietatile de mai jos ii spunem tag-ul de <main> sa creasca cat are loc, astfel incat footer-ul in subsol sau josul paginii */
+.layout main {
+    flex: 1;
+    text-align: center;
+}
