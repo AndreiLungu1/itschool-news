@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Layout from "../components/Layout";
 import { useParams } from "react-router-dom";
 import { getNewsDetailsEndpoint } from "../api/endpoints";
@@ -29,12 +29,22 @@ export default function NewsDetails() {
   // Formatez data primita de la API catre formatul: zi/luna/an
   const formattedDate = getFormattedDate(date);
 
-  function handleAddToFavorites(news) {
+  const [showAlert, setShowAlert] = useState(false);
+  
+
+
+  function handleAddToFavorites(news) { 
 	// Apelez actiunea de adaugare la favorite
 	const actionResult = addToFavorite(news);
 	//Trimit rezultatul actiunii catre reducer
 	favoritesDispatch(actionResult);
+  setShowAlert(true);
+  setTimeout(() => {
+    setShowAlert(false); 
+  }, 2000);
   }
+  console.log(showAlert);
+  console.log(handleAddToFavorites);
 
   return (
     <Layout>
@@ -69,6 +79,11 @@ export default function NewsDetails() {
           </Col>
         </Row>
       </Container>
+      {showAlert && (
+        <div className="alert alert-success fixed-top w-100 text-center" role="alert">
+          Produsul a fost adaugat la favorite
+        </div>
+      )}
     </Layout>
   );
 }
