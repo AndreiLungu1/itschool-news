@@ -1,13 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Layout from "../components/Layout";
 import { FavoritesContext } from "../store/Favorites/context";
 import NewsCardList from "../components/NewsCardList";
 import { Container } from "react-bootstrap";
+import { useLocalStorage } from "../utils/hooks/useLocalStorage";
 
 export default function Favourites() {
   //Extrag state-ul global de stiri favorite
   const { favoritesState } = useContext(FavoritesContext);
   const { news } = favoritesState;
+  const [_, setLocalStorageState] = useLocalStorage(
+    "favorites",
+    favoritesState
+  );
+  useEffect(() => {
+    setLocalStorageState(favoritesState);
+  }, [favoritesState, setLocalStorageState]);
+
   return (
     <Layout>
       <Container className="my-5">
@@ -16,7 +25,7 @@ export default function Favourites() {
         {news.length === 0 ? (
           <p>Momentan nu ai nici o stire favorita</p>
         ) : (
-            <NewsCardList newsList={news} />
+          <NewsCardList newsList={news} />
         )}
       </Container>
     </Layout>

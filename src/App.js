@@ -8,6 +8,7 @@ import NewsCategory from "./pages/NewsCategory";
 import { useReducer } from "react";
 import { favoritesReducer, initialState } from "./store/Favorites/reducer";
 import { FavoritesContext } from "./store/Favorites/context";
+import { useLocalStorage } from "./utils/hooks/useLocalStorage";
 
 // Ne definim rutele necesare aplicatiei
 const router = createBrowserRouter([
@@ -34,8 +35,10 @@ const router = createBrowserRouter([
 
 
 function App() {
+	// Daca am state in localStorage, il prieau, daca nu pornesc de la initialState.
+	const [initialLocalStorageState] = useLocalStorage("favorites", initialState);
 // initializez reducer-ul pentru stirile favorite
-	const [favoritesState, favoritesDispatch] = useReducer(favoritesReducer, initialState);
+	const [favoritesState, favoritesDispatch] = useReducer(favoritesReducer, initialLocalStorageState);
 	// Creez un obiect ce va fi pasat ca valoare contextului 
 	const favoritesContextValue = {
 		favoritesState,
