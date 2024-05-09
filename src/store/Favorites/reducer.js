@@ -23,7 +23,6 @@ export function favoritesReducer(state, action) {
     }
     case "REMOVE_FROM_FAVORITES": {
       //Filtrez din state stirea pe care vreau sa o sterg
-      console.log(action.payload);
       const filteredNews = state.news.filter((singleNews) => {
         return singleNews.id !== action.payload;
       });

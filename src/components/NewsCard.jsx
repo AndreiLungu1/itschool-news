@@ -33,7 +33,7 @@ function handleRemoveFromFavorites(id) {
 			{hasCloseButton && (
 				<Button variant="light" onClick={() => {
 					handleRemoveFromFavorites(newsId)
-				}}><span className="materials-icons text-dark"></span></Button>
+				}}><span className="material-icons text-dark">close</span></Button>
 		)} 
 		</Card>
 	);

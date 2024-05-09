@@ -54,8 +54,7 @@ export default function NewsDetails() {
       setShowAlert(false);
     }, 2000);
   }
-  console.log(showAlert);
-  console.log(handleAddToFavorites);
+  
 
   return (
     <Layout>
