@@ -95,7 +95,7 @@ export default function NewsDetails() {
       </Container>
       {showAlert && (
         <div
-          className="alert alert-success fixed-top w-100 text-center"
+          className="alert alert-success fixed-top w-100 text-center black-background"
           role="alert"
         >
           Produsul a fost adaugat la favorite
