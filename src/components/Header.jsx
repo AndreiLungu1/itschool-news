@@ -52,19 +52,19 @@ function Header() {
                 </Link>
               </li>
               <li className={isDisplayed ? "container" : null}>
-                <Link
-                  to="/favourites"
-                  className="p-3 text-uppercase text-light"
-                >
-                  Favorite
-                </Link>
-              </li>
-              <li className={isDisplayed ? "container" : null}>
                 <Link 
                 to="/category/science"
                 className="p-3 text-uppercase text-light"
                 >
                 Science
+                </Link>
+              </li>
+              <li className={isDisplayed ? "container" : null}>
+                <Link
+                  to="/favourites"
+                  className="p-3 text-uppercase text-light"
+                >
+                  Favorite
                 </Link>
               </li>
             </ul>

@@ -11,7 +11,6 @@ import { addToFavorite } from "../store/Favorites/actions";
 import { FavoritesContext } from "../store/Favorites/context";
 import { useLocalStorage } from "../utils/hooks/useLocalStorage";
 
-
 export default function NewsDetails() {
   //Extrag functia care imi modifica state-ul global de stiri favorite
   const { favoritesState, favoritesDispatch } = useContext(FavoritesContext);
@@ -33,7 +32,8 @@ export default function NewsDetails() {
 
   const [showAlert, setShowAlert] = useState(false);
   // Extragem functia de modificare a localStorage-ului. Nu avem nevoie de state-ul din localStorage, conventia este ca pentru variabile neutilizate sa punem denumirea .
-  const [localStorageState, setLocalStorageState] = useLocalStorage(
+  // eslint-disable-next-line
+  const [_, setLocalStorageState] = useLocalStorage(
     "favorites",
     favoritesState
   );
@@ -41,7 +41,7 @@ export default function NewsDetails() {
   // Cum stim ca s-au modificat produsele favorite? Primim o noua valoare a lui favoritesState.
   // setLocalStorageState este sugerat sa fie adaugat la dependente de o regula de lining.
   useEffect(() => {
-    setLocalStorageState(favoritesState)
+    setLocalStorageState(favoritesState);
   }, [favoritesState, setLocalStorageState]);
 
   function handleAddToFavorites(news) {
@@ -54,7 +54,6 @@ export default function NewsDetails() {
       setShowAlert(false);
     }, 2000);
   }
-  
 
   return (
     <Layout>
