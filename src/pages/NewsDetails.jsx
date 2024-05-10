@@ -33,7 +33,7 @@ export default function NewsDetails() {
 
   const [showAlert, setShowAlert] = useState(false);
   // Extragem functia de modificare a localStorage-ului. Nu avem nevoie de state-ul din localStorage, conventia este ca pentru variabile neutilizate sa punem denumirea .
-  const [__, setLocalStorageState] = useLocalStorage(
+  const [__html, setLocalStorageState] = useLocalStorage(
     "favorites",
     favoritesState
   );
