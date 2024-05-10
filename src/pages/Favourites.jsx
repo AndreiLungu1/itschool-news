@@ -9,7 +9,7 @@ export default function Favourites() {
   //Extrag state-ul global de stiri favorite
   const { favoritesState } = useContext(FavoritesContext);
   const { news } = favoritesState;
-  const [__html, setLocalStorageState] = useLocalStorage(
+  const [localStorageState, setLocalStorageState] = useLocalStorage(
     "favorites",
     favoritesState
   );
