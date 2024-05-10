@@ -12,4 +12,4 @@ Intuitive navigation: To access more news about a particular category, users can
 
 Favourites functionality: The app allows users to add news to their list of favourites for quick access later. This functionality provides a personalised experience and allows users to save and revisit articles that have particularly interested them.
 
-To access the news app you can simply click here: [news](https://news-project-andrei.netlify.app/)
+To access the news app you can simply click here: [News](https://news-project-andrei.netlify.app/)
