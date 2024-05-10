@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import { Container } from "react-bootstrap";
 import NewsCardList from "../components/NewsCardList";

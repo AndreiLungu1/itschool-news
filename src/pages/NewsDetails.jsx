@@ -10,7 +10,7 @@ import "./newsDetails.css";
 import { addToFavorite } from "../store/Favorites/actions";
 import { FavoritesContext } from "../store/Favorites/context";
 import { useLocalStorage } from "../utils/hooks/useLocalStorage";
-import { favoritesState } from "../pages/Favourites";
+
 
 export default function NewsDetails() {
   //Extrag functia care imi modifica state-ul global de stiri favorite
@@ -33,7 +33,7 @@ export default function NewsDetails() {
 
   const [showAlert, setShowAlert] = useState(false);
   // Extragem functia de modificare a localStorage-ului. Nu avem nevoie de state-ul din localStorage, conventia este ca pentru variabile neutilizate sa punem denumirea .
-  const [_, setLocalStorageState] = useLocalStorage(
+  const [__, setLocalStorageState] = useLocalStorage(
     "favorites",
     favoritesState
   );
